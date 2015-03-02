@@ -1,5 +1,8 @@
 #!/bin/bash
 # Watchdog for FHEM
+# Crontab prüft alle 5 Minuten ob FHEM läuft
+# sudo crontab -e
+# */5 * * * * /opt/fhem/fhem_watchdog.sh
 
 cnt=$(ps -ef | grep -v grep | grep fhem.pl | wc -l);
 
