@@ -1,5 +1,6 @@
 #!/bin/bash
 # Update hmcfgusb
+# https://git.zerfleddert.de/cgi-bin/gitweb.cgi/hmcfgusb
 
 # Setting up directories
 PFAD=/opt/hmcfgusb
