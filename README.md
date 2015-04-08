@@ -12,3 +12,6 @@ pilight git: https://github.com/pilight/pilight
 wiringpi: http://wiringpi.com/
 wiringpi installation: http://wiringpi.com/download-and-install/
 wiringpi git: https://git.drogon.net/?p=wiringPi
+
+
+Raspberry Hardware Watchdog: http://raspberry.tips/raspberrypi-tutorials/oscam-watchdog-fuer-den-raspberry-pi/ // http://www.bayerschmidt.com/raspberry-pi/89-auto-reboot-a-hung-raspberry-pi-using-the-on-board-watchdog-timer.html
