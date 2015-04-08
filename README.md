@@ -14,4 +14,4 @@ wiringpi installation: http://wiringpi.com/download-and-install/
 wiringpi git: https://git.drogon.net/?p=wiringPi
 
 
-Raspberry Hardware Watchdog: http://raspberry.tips/raspberrypi-tutorials/oscam-watchdog-fuer-den-raspberry-pi/ // http://www.bayerschmidt.com/raspberry-pi/89-auto-reboot-a-hung-raspberry-pi-using-the-on-board-watchdog-timer.html
+Raspberry Hardware Watchdog: http://forum.fhem.de/index.php/topic,20553.0.html // http://www.bayerschmidt.com/raspberry-pi/89-auto-reboot-a-hung-raspberry-pi-using-the-on-board-watchdog-timer.html
