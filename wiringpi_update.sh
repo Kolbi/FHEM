@@ -12,7 +12,7 @@ cd $PFAD
 sudo git pull origin
 
 # Compile wiringPi
-./build
+sudo ./build
 
 exit 0
 
