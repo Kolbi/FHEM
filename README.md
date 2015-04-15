@@ -23,3 +23,13 @@ pilight git: https://github.com/pilight/pilight
 
 ## Raspberry Hardware Watchdog# 
 http://forum.fhem.de/index.php/topic,20553.0.html // http://www.bayerschmidt.com/raspberry-pi/89-auto-reboot-a-hung-raspberry-pi-using-the-on-board-watchdog-timer.html
+
+Pilight installation:
+http://www.pilight.org/getting-started/installation#postinstall
+apt-get install pilight
+The following extra packages will be installed:
+  libpcap0.8 libunwind8 pilight-webgui
+Suggested packages:
+  php5-cgi pilight-firmware
+The following NEW packages will be installed:
+  libpcap0.8 libunwind8 pilight pilight-webgui
