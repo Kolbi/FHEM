@@ -26,10 +26,3 @@ http://forum.fhem.de/index.php/topic,20553.0.html // http://www.bayerschmidt.com
 
 Pilight installation:
 http://www.pilight.org/getting-started/installation#postinstall
-apt-get install pilight
-The following extra packages will be installed:
-  libpcap0.8 libunwind8 pilight-webgui
-Suggested packages:
-  php5-cgi pilight-firmware
-The following NEW packages will be installed:
-  libpcap0.8 libunwind8 pilight pilight-webgui
