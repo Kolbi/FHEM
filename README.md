@@ -26,3 +26,21 @@ http://forum.fhem.de/index.php/topic,20553.0.html // http://www.bayerschmidt.com
 
 Pilight installation:
 http://www.pilight.org/getting-started/installation#postinstall
+
+
+
+Netatmo:
+sudo apt-get install libxml-simple-perl
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  libxml-namespacesupport-perl libxml-parser-perl libxml-sax-base-perl
+  libxml-sax-expat-perl libxml-sax-perl
+The following NEW packages will be installed:
+  libxml-namespacesupport-perl libxml-parser-perl libxml-sax-base-perl
+  libxml-sax-expat-perl libxml-sax-perl libxml-simple-perl
+0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+Need to get 503 kB of archives.
+After this operation, 1,390 kB of additional disk space will be used.
+Do you want to continue [Y/n]? 
