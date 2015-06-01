@@ -1,0 +1,15 @@
+#!/bin/bash
+# Install fhem
+# http://fhem.de/fhem.html#Download
+
+# Install needed packages
+sudo apt-get install libusb-1.0-0-dev make gcc git-core build-essential -y
+sudo apt-get install perl libdevice-serialport-perl libio-socket-ssl-perl -y
+# fhem-X.Y.deb bitte mit der aktuellsten, stabilen Version ersetzen
+wget  http://fhem.de/fhem-5.6.deb
+sudo dpkg -i fhem-5.6.deb
+rm fhem-5.6.deb
+
+exit 0
+
+fi
