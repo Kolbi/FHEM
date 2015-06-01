@@ -9,6 +9,7 @@ sudo apt-get install perl libdevice-serialport-perl libio-socket-ssl-perl -y
 wget  http://fhem.de/fhem-5.6.deb
 sudo dpkg -i fhem-5.6.deb
 rm fhem-5.6.deb
+sudo apt-get install -f
 
 exit 0
 
