@@ -27,7 +27,7 @@ MAIL_ATTACH=0
 # Beginn script
 cnt=$(ps -ef | grep -v grep | grep fhem.pl | wc -l);
 
-if test $cnt -gt 0 ; 
+if test $cnt -gt 0 ;
   then
     echo "FHEM running";
     exit 0
