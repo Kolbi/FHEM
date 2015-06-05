@@ -46,9 +46,9 @@ if test $cnt -gt 0 ;
     then
       if [ $MAIL_ATTACH = 1 ];
       then
-        sendEmail -f '$MAIL_SENDER' -t '$MAIL_RECEIVER' -u '$MAIL_TITLE' -m '$MAIL_TEXT' -a '$FHEM_LOG' -s '$MAIL_SMTP' -xu '$MAIL_ACCOUNT' -xp '$MAIL_PASSWORD' -o tls=auto -o message-charset=utf-8;
+        sendEmail -f "$MAIL_SENDER" -t "$MAIL_RECEIVER" -u "$MAIL_TITLE" -m "$MAIL_TEXT" -a "$FHEM_LOG" -s "$MAIL_SMTP" -xu "$MAIL_ACCOUNT" -xp "$MAIL_PASSWORD" -o tls=auto -o message-charset=utf-8;
       else
-        sendEmail -f '$MAIL_SENDER' -t '$MAIL_RECEIVER' -u '$MAIL_TITLE' -m '$MAIL_TEXT' -s '$MAIL_SMTP' -xu '$MAIL_ACCOUNT' -xp '$MAIL_PASSWORD' -o tls=auto -o message-charset=utf-8;
+        sendEmail -f "$MAIL_SENDER" -t "$MAIL_RECEIVER" -u "$MAIL_TITLE" -m "$MAIL_TEXT" -s "$MAIL_SMTP" -xu "$MAIL_ACCOUNT" -xp "$MAIL_PASSWORD" -o tls=auto -o message-charset=utf-8;
       fi
     fi
     exit 0
