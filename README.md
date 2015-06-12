@@ -21,9 +21,6 @@ pilight installation: http://www.pilight.org/get-started/installation
 pilight git: https://github.com/pilight/pilight
 (nutzt seit neuestem wiringx (buildin) und benötigt nicht mehr wiringpi)
 
-## Raspberry Hardware Watchdog# 
-http://forum.fhem.de/index.php/topic,20553.0.html // http://www.bayerschmidt.com/raspberry-pi/89-auto-reboot-a-hung-raspberry-pi-using-the-on-board-watchdog-timer.html
-
 ## Pilight installation:
 http://www.pilight.org/getting-started/installation#postinstall
 
