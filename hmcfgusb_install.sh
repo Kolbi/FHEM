@@ -22,6 +22,13 @@ cd hmcfgusb
 sudo make
 
 # Geht stand heute nicht automatisch 01.06.15
+# cat > /etc/init.d/hmland <<"EOF"
+# cat >> /etc/init.d/hmland <<"EOF"
+# cat >> /etc/init.d/hmland <<EOF
+# cat > /etc/init.d/hmland <<EOF
+# cat >/etc/init.d/hmland <<"EOF"
+# cat >/etc/init.d/hmland <<EOF
+
 ## Autostart von hexenmeister
 ## http://forum.fhem.de/index.php?action=post;quote=190887;topic=13071.435;last_msg=282280
 cat > /etc/init.d/hmland <<"EOF"
