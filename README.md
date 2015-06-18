@@ -24,6 +24,16 @@ pilight git: https://github.com/pilight/pilight
 ## Pilight installation:
 http://www.pilight.org/getting-started/installation#postinstall
 
+sudo nano /etc/apt/sources.list
+
+deb http://apt.pilight.org/ stable main
+
+wget -O - http://apt.pilight.org/pilight.key | sudo apt-key add -
+
+sudo apt-get update && sudot apt-get install pilight -y
+
+sudo service pilight start
+
 ## Netatmo:
 sudo apt-get install libxml-simple-perl -y
 
