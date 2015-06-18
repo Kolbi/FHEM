@@ -52,6 +52,6 @@ Einfügen ans Ende:
 
 dtoverlay=w1-gpio-pullup
 
-sudo cp /opt/fhem/contrib/58_GPIO4.pm /opt/fhem/FHEM/58.GPIO4.pm
+sudo cp /opt/fhem/contrib/58_GPIO4.pm /opt/fhem/FHEM/58_GPIO4.pm
 
 sudo reboot
