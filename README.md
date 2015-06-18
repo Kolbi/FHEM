@@ -25,7 +25,7 @@ pilight git: https://github.com/pilight/pilight
 http://www.pilight.org/getting-started/installation#postinstall
 
 ## Netatmo:
-sudo apt-get install libxml-simple-perl
+sudo apt-get install libxml-simple-perl -y
 
 The following NEW packages will be installed:
   libxml-namespacesupport-perl libxml-parser-perl libxml-sax-base-perl
