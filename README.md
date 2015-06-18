@@ -32,6 +32,12 @@ wget -O - http://apt.pilight.org/pilight.key | sudo apt-key add -
 
 sudo apt-get update && sudot apt-get install pilight -y
 
+sudo nano /etc/pilight/config.json
+
+Port einfügen:
+
+"port": 5000,
+
 sudo service pilight start
 
 ## Netatmo:
