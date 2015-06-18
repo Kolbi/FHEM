@@ -31,3 +31,12 @@ The following NEW packages will be installed:
   libxml-namespacesupport-perl libxml-parser-perl libxml-sax-base-perl
   libxml-sax-expat-perl libxml-sax-perl libxml-simple-perl
 
+## GPIO4
+# http://www.fhemwiki.de/wiki/Raspberry_Pi_und_1-Wire#ab_2015_bzw._Kernelversion_3.18.3
+sudo nano /boot/config.txt
+Einfügen ans Ende:
+# activating 1-wire with pullup
+dtoverlay=w1-gpio-pullup
+
+sudo cp /opt/fhem/contrib/58_GPIO4.pm /opt/fhem/FHEM/58.GPIO4.pm
+sudo reboot
