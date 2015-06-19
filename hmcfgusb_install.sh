@@ -3,8 +3,6 @@
 # https://git.zerfleddert.de/cgi-bin/gitweb.cgi/hmcfgusb
 # http://www.fhemwiki.de/wiki/HM-CFG-USB_USB_Konfigurations-Adapter
 
-# muss mit sudo gestartet werden ansonsten wird /etc/init.d/hmland nicht erstellt, oder sudo vor cat?
-
 # Setting up directories
 PFAD=/opt
 
@@ -23,8 +21,10 @@ cd hmcfgusb
 # Compile hmcfgusb
 sudo make
 
-## Autostart von hexenmeister
-## http://forum.fhem.de/index.php?action=post;quote=190887;topic=13071.435;last_msg=282280
+# Autostart von hexenmeister
+# muss mit sudo gestartet werden ansonsten wird /etc/init.d/hmland nicht erstellt, oder sudo vor cat?
+# http://forum.fhem.de/index.php?action=post;quote=190887;topic=13071.435;last_msg=282280
+# cat << "EOF" | sudo tee -a /etc/init.d/hmland ???
 cat > /etc/init.d/hmland <<"EOF"
 # simple init for hmland
 ### BEGIN INIT INFO
