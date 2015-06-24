@@ -57,9 +57,11 @@ sudo nano /boot/config.txt
 
 Einfügen ans Ende:
 
-# activating 1-wire with pullup
-
+ # activating 1-wire with pullup
+ 
 dtoverlay=w1-gpio-pullup
+
+Speichern (Strg + X => J => Enter
 
 sudo cp /opt/fhem/contrib/58_GPIO4.pm /opt/fhem/FHEM/58_GPIO4.pm
 
