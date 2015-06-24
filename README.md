@@ -68,10 +68,17 @@ sudo apt-get install libjson-perl -y
 
 ##USB-Stick einhängen und für Logs verwenden
 USB-Stick vfat formatieren und anschliessen
+
 sudo mkdir /mnt/usb
+
 sudo nano /etc/fstab/
+
 /dev/sda1 /mnt/usb vfat defaults,umask=000 0 3
+
 sudo service fhem stop
+
 sudo mv /opt/fhem/log /mnt/usb/
+
 sudo ls -s /mnt/usb/log /opt/fhem/log
+
 sudo service fhem start
