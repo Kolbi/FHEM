@@ -1,7 +1,14 @@
 # FHEM
-
-Shell-Skripte nach dem Erstellen mit 755 Rechten versehen:
-chmod 755 fhem_watchdog.sh // chmod 755 hmcfgusb_update.sh
+## Anleitung zum Herunterladen und Ausführen eines Skriptes
+###SSH einloggen
+###Ins Temp-Verzeichnis springen
+cd /tmp
+###Skripte herunterladen:
+wget -O https://raw.githubusercontent.com/Kolbi/FHEM/master/fhem_install.sh
+###Shell-Skripte nach dem Erstellen mit 755 Rechten versehen:
+chmod 755 fhem_install.sh
+###Shell-Skript ausführen
+sudo ./fhem_install.sh
 
 ## Kommunikation Raspberry / GPIO
 wiringpi: http://wiringpi.com/
@@ -17,11 +24,14 @@ https://github.com/xkonni/raspberry-remote
 
 ## Kommunikation Raspberry / GPIO + Zum Senden von 433 Mhz Befehle:
 pilight: http://www.pilight.org/
+
 pilight installation: http://www.pilight.org/get-started/installation
+
 pilight git: https://github.com/pilight/pilight
+
 (nutzt seit neuestem wiringx (buildin) und benötigt nicht mehr wiringpi)
 
-## Pilight installation:
+### Pilight installation:
 http://www.pilight.org/getting-started/installation#postinstall
 
 sudo nano /etc/apt/sources.list
