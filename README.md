@@ -31,25 +31,6 @@ pilight git: https://github.com/pilight/pilight
 
 (nutzt seit neuestem wiringx (buildin) und benötigt nicht mehr wiringpi)
 
-### Pilight installation:
-http://www.pilight.org/getting-started/installation#postinstall
-
-sudo nano /etc/apt/sources.list
-
-deb http://apt.pilight.org/ stable main
-
-wget -O - http://apt.pilight.org/pilight.key | sudo apt-key add -
-
-sudo apt-get update && sudot apt-get install pilight -y
-
-sudo nano /etc/pilight/config.json
-
-Port einfügen:
-
-"port": 5000,
-
-sudo service pilight start
-
 ## GPIO4
 http://www.fhemwiki.de/wiki/Raspberry_Pi_und_1-Wire#ab_2015_bzw._Kernelversion_3.18.3
 
