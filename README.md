@@ -31,23 +31,6 @@ pilight git: https://github.com/pilight/pilight
 
 (nutzt seit neuestem wiringx (buildin) und benötigt nicht mehr wiringpi)
 
-## GPIO4
-http://www.fhemwiki.de/wiki/Raspberry_Pi_und_1-Wire#ab_2015_bzw._Kernelversion_3.18.3
-
-sudo nano /boot/config.txt
-
-Einfügen ans Ende:
-
- # activating 1-wire with pullup
- 
-dtoverlay=w1-gpio-pullup
-
-Speichern (Strg + X => J => Enter
-
-sudo cp /opt/fhem/contrib/58_GPIO4.pm /opt/fhem/FHEM/58_GPIO4.pm
-
-sudo reboot
-
 ##USB-Stick einhängen und für Logs verwenden
 USB-Stick vfat formatieren und anschliessen
 
