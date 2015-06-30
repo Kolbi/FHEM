@@ -78,7 +78,9 @@ EOF
 sudo chmod 755 /etc/init.d/hmland
 sudo update-rc.d hmland defaults
 sudo service hmland start
-##
+## FHEM anlegen
+# define hmusb HMLAN 127.0.0.1:1234 
+# attr hmusb hmId <hmId>
 
 exit 0
 
