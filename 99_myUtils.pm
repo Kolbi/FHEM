@@ -11,6 +11,8 @@ use warnings;
 use POSIX;
 
 ######################################################
+# SetTempList_Heizung($$$$$$$$)
+######################################################
 sub
 SetTempList_Heizung($$$$$$$$)
 {
@@ -74,5 +76,36 @@ SetTempList_Heizung_[HM-CC-RT-DN2]()
     # SetTempList_Heizung("[HM-TC-IT-WM-W-EU2]_Climate", $mo, $di, $mi, $do, $fr, $sa, $so);
 }
 # End SetTempList_Heizung_[HM-CC-RT-DN2]
+######################################################
+# SetTempList_Heizung($$$$$$$$)
+######################################################
+
+######################################################
+# SetTempList_Heizung_Eco
+# setzen per Aufruf von "{SetTempList_Heizung_Eco}"
+######################################################
+sub
+SetTempList_Heizung_Eco()
+ {
+   { fhem ("set [HM-CC-RT-DN1]_Clima controlManu prep 17.0")};
+   { fhem ("set [HM-CC-RT-DN2]_Clima controlManu exec 17.0")};
+}
+######################################################
+# SetTempList_Heizung_Eco
+######################################################
+
+######################################################
+# SetTempList_Heizung_Auto
+# setzen per Aufruf von "{SetTempList_Heizung_Auto}"
+######################################################
+sub
+SetTempList_Heizung_Auto()
+ {
+   { fhem ("set [HM-CC-RT-DN1]_Clima controlMode prep auto")};
+   { fhem ("set [HM-CC-RT-DN2]_Clima controlMode exec auto")};
+}
+######################################################
+# SetTempList_Heizung_Auto
+######################################################
 
 1;
