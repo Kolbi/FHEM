@@ -4,7 +4,7 @@
 ###Ins Temp-Verzeichnis springen
 cd /tmp
 ###Skripte herunterladen:
-wget -O https://raw.githubusercontent.com/Kolbi/FHEM/master/fhem_install.sh
+wget https://raw.githubusercontent.com/Kolbi/FHEM/master/fhem_install.sh
 ###Shell-Skripte nach dem Erstellen mit 755 Rechten versehen:
 chmod 755 fhem_install.sh
 ###Shell-Skript ausführen
