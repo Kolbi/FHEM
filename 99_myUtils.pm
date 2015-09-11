@@ -132,6 +132,18 @@ Kalenderstart ($)
 		if ($Kalendertext =~ /Feiertag/) {
 			fhem("set Feiertag_dummy ja");
 		};
+		if ($Kalendertext =~ /Restmüll/) {
+			fhem("set Restmuell_dummy ja");
+		};
+		if ($Kalendertext =~ /Blaue Tonne/) {
+			fhem("set Blau_dummy ja");
+		};
+		if ($Kalendertext =~ /Grünabfall/) {
+			fhem("set Gruen_dummy ja");
+		};
+		if ($Kalendertext =~ /Gelber Sack/) {
+			fhem("set Gelb_dummy ja");
+		};
 	};
 }
 ######################################################
@@ -159,6 +171,18 @@ sub Kalenderende ($) {
 		};
 		if ($Kalendertext =~ /Feiertag/) {
 			fhem("set Feiertag_dummy nein");
+		};
+		if ($Kalendertext =~ /Restmüll/) {
+			fhem("set Restmuell_dummy nein");
+		};
+		if ($Kalendertext =~ /Blaue Tonne/) {
+			fhem("set Blau_dummy nein");
+		};
+		if ($Kalendertext =~ /Grünabfall/) {
+			fhem("set Gruen_dummy nein");
+		};
+		if ($Kalendertext =~ /Gelber Sack/) {
+			fhem("set Gelb_dummy nein");
 		};
 	};
 }
