@@ -55,6 +55,9 @@ SetTempList_Heizung_[HM-CC-RT-DN1]()
  	  
     SetTempList_Heizung("[HM-CC-RT-DN1]_Clima", $mo, $di, $mi, $do, $fr, $sa, $so);
     # SetTempList_Heizung("[HM-TC-IT-WM-W-EU1]_Climate", $mo, $di, $mi, $do, $fr, $sa, $so);
+    
+    #{ fhem ("set [HM-CC-RT-DN1]_Clima tempListMon prep 01:00 20.0 05:00 19.5 09:00 21.5 16:00 20.0 18:00 20.5 24:00 21.5")};
+    #{ fhem ("set [HM-TC-IT-WM-W-EU1]_Climate tempListSun exec 01:00 20.0 06:30 19.5 10:00 21.5 15:00 20.0 18:00 20.5 24:00 21.5")};
 }
 # End SetTempList_Heizung_[HM-CC-RT-DN1]
 
@@ -106,6 +109,20 @@ SetTempList_Heizung_Auto()
 }
 ######################################################
 # SetTempList_Heizung_Auto
+######################################################
+
+######################################################
+# SetTempList_Heizung_M_21
+# setzen per Aufruf von "{SetTempList_Heizung_Eco}"
+######################################################
+sub
+SetTempList_Heizung_M_21()
+ {
+   { fhem ("set [HM-CC-RT-DN1]_Clima controlManu prep 21.0")};
+   { fhem ("set [HM-CC-RT-DN2]_Clima controlManu exec 21.0")};
+}
+######################################################
+# SetTempList_Heizung_M_21
 ######################################################
 
 ######################################################
