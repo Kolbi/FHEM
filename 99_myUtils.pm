@@ -170,7 +170,9 @@ Kalenderstart ($)
 ######################################################
 # Kalenderende
 ######################################################
-sub Kalenderende ($) {
+sub 
+Kalenderende ($) 
+{
 	my ($Ereignis) = @_;
 	my @Ereignisarray = split(/.*:\s/,$Ereignis);
 	my $Ereignisteil1 = $Ereignisarray[1];
