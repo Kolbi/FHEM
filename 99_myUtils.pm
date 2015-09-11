@@ -207,4 +207,36 @@ sub Kalenderende ($) {
 # Kalenderende
 ######################################################
 
+######################################################
+# DebianMail  Mail auf dem RPi versenden
+# http://www.fhemwiki.de/wiki/E-Mail_senden
+# define Sonstiges at *01:00:00 {\
+# DebianMail('email@email.domain','Subject','Text','Anhang');;\
+# }
+######################################################
+sub 
+DebianMail 
+{ 
+ my $rcpt = shift;
+ my $subject = shift; 
+ my $text = shift;
+ my $attach = shift; 
+ my $ret = "";
+ my $sender = "absender\@account.de"; 
+ my $konto = "kontoname\@account.de";
+ my $passwrd = "passwrd";
+ my $provider = "smtp.provider.de:25";
+ Log 1, "sendEmail RCP: $rcpt";
+ Log 1, "sendEmail Subject: $subject";
+ Log 1, "sendEmail Text: $text";
+ Log 1, "sendEmail Anhang: $attach";;
+ 
+ $ret .= qx(sendEmail -f '$sender' -t '$rcpt' -u '$subject' -m '$text' -a '$attach' -s '$provider' -xu '$konto' -xp '$passwrd' -o tls=auto -o message-charset=utf-8);
+ $ret =~ s,[\r\n]*,,g;    # remove CR from return-string 
+ Log 1, "sendEmail returned: $ret"; 
+}
+######################################################
+# DebianMail  Mail auf dem RPi versenden
+######################################################
+
 1;
