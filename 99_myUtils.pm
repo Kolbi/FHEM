@@ -108,4 +108,62 @@ SetTempList_Heizung_Auto()
 # SetTempList_Heizung_Auto
 ######################################################
 
+######################################################
+# Kalenderstart
+######################################################
+sub
+Kalenderstart ($)
+{
+	my ($Ereignis) = @_;
+	my @Ereignisarray = split(/.*:\s/,$Ereignis);
+	my $Ereignisteil1 = $Ereignisarray[1];
+	my @uids=split(/;/,$Ereignisteil1);
+	foreach my $uid (@uids) {
+		my $Kalendertext = fhem("get Kalender_Christian summary $uid");
+		if ($Kalendertext =~ /Urlaub/) {
+			fhem("set Urlaub_dummy ja");
+		};
+		if ($Kalendertext =~ /Urlaub2/) {
+			fhem("set Urlaub2_dummy ja");
+		};
+		if ($Kalendertext =~ /Besuch/) {
+			fhem("set Gast_dummy ja");
+		};
+		if ($Kalendertext =~ /Feiertag/) {
+			fhem("set Feiertag_dummy ja");
+		};
+	};
+}
+######################################################
+# Kalenderstart
+######################################################
+
+######################################################
+# Kalenderende
+######################################################
+sub Kalenderende ($) {
+	my ($Ereignis) = @_;
+	my @Ereignisarray = split(/.*:\s/,$Ereignis);
+	my $Ereignisteil1 = $Ereignisarray[1];
+	my @uids=split(/;/,$Ereignisteil1);
+	foreach my $uid (@uids) {
+		my $Kalendertext = fhem("get Kalender_Christian summary $uid");
+		if ($Kalendertext =~ /Urlaub/) {
+			fhem("set Urlaub_dummy nein");
+		};
+		if ($Kalendertext =~ /Urlaub2/) {
+			fhem("set Urlaub2_dummy nein");
+		};
+		if ($Kalendertext =~ /Besuch/) {
+			fhem("set Gast_dummy nein");
+		};
+		if ($Kalendertext =~ /Feiertag/) {
+			fhem("set Feiertag_dummy nein");
+		};
+	};
+}
+######################################################
+# Kalenderende
+######################################################
+
 1;
