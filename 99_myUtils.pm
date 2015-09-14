@@ -245,7 +245,7 @@ foreach my $uid (@uids) {
          }
       }
    if ($Kalendertext =~ /Gelber Sack/) {
-      my $eventDate = KalenderDatum('$Kalendername', $uid);
+      my $eventDate = KalenderDatum($Kalendername, $uid);
       if ($dtWertstoff eq '' || ($eventDate < $dtWertstoff && $eventDate > $t))
       {
          $dtWertstoff = $eventDate;
@@ -258,7 +258,7 @@ foreach my $uid (@uids) {
       }
    };
    if ($Kalendertext =~ /Restmüll/) {
-      my $eventDate = KalenderDatum('$Kalendername', $uid);
+      my $eventDate = KalenderDatum($Kalendername, $uid);
       if ($dtRest eq '' || ($eventDate < $dtRest && $eventDate > $t))
       {
           $dtRest = $eventDate;
@@ -271,7 +271,7 @@ foreach my $uid (@uids) {
       }
    };
    if ($Kalendertext =~ /Grünabfall/) {
-      my $eventDate = KalenderDatum('$Kalendername', $uid);
+      my $eventDate = KalenderDatum($Kalendername, $uid);
       if ($dtBiotonne eq '' || ($eventDate < $dtBiotonne && $eventDate > $t))
       {
          $dtBiotonne = $eventDate;
