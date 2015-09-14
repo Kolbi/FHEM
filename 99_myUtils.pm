@@ -244,6 +244,7 @@ foreach my $uid (@uids) {
          	fhem("set Blau_dummy $dtPapier");
          }
       }
+   };
    if ($Kalendertext =~ /Gelber Sack/) {
       my $eventDate = KalenderDatum($Kalendername, $uid);
       if ($dtWertstoff eq '' || ($eventDate < $dtWertstoff && $eventDate > $t))
