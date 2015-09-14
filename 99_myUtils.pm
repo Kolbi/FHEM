@@ -225,7 +225,7 @@ foreach my $uid (@uids) {
    	if ($Kalendertext =~ /Blaue Tonne/)
    {
 	  # befüllt $eventDate mit dem Kalenderdatum aus dem zutreffenden Treffer
-      my $eventDate = KalenderDatum('$Kalendername', $uid);
+      my $eventDate = KalenderDatum($Kalendername, $uid);
 	  # Beim ersten Durchlauf ist $dtPapier immer leer
 	  # Beim zweiten Durchlauf nicht, daher muss $eventDate in der Zukunft liegen und kleiner sein, als das vorherige Ergebnis
 	  # so wird die nächste Abholung ermittelt
