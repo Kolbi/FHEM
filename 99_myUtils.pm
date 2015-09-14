@@ -149,18 +149,6 @@ Kalenderstart ($)
 		if ($Kalendertext =~ /Feiertag/) {
 			fhem("set Feiertag_dummy ja");
 		};
-		if ($Kalendertext =~ /Restmüll/) {
-			fhem("set Restmuell_dummy ja");
-		};
-		if ($Kalendertext =~ /Blaue Tonne/) {
-			fhem("set Blau_dummy ja");
-		};
-		if ($Kalendertext =~ /Grünabfall/) {
-			fhem("set Gruen_dummy ja");
-		};
-		if ($Kalendertext =~ /Gelber Sack/) {
-			fhem("set Gelb_dummy ja");
-		};
 	};
 }
 ######################################################
@@ -191,22 +179,113 @@ Kalenderende ($)
 		if ($Kalendertext =~ /Feiertag/) {
 			fhem("set Feiertag_dummy nein");
 		};
-		if ($Kalendertext =~ /Restmüll/) {
-			fhem("set Restmuell_dummy nein");
-		};
-		if ($Kalendertext =~ /Blaue Tonne/) {
-			fhem("set Blau_dummy nein");
-		};
-		if ($Kalendertext =~ /Grünabfall/) {
-			fhem("set Gruen_dummy nein");
-		};
-		if ($Kalendertext =~ /Gelber Sack/) {
-			fhem("set Gelb_dummy nein");
-		};
 	};
 }
 ######################################################
 # Kalenderende
+######################################################
+
+######################################################
+# Müllkalender
+# http://www.blog-gedanken.de/smarthome-2/smarthome-mit-fhem-umsetzung-meines-abfallkalenders/
+######################################################
+#
+# Hilfsfunktion für Kalenderauswertungen
+#
+sub
+KalenderDatum($$)
+{
+ my ($KalenderName, $KalenderUid) = @_;
+ my $dt = fhem("get $KalenderName start $KalenderUid");
+ my @SplitDt = split(/ /,$dt);
+ my @SplitDate = split(/\./,$SplitDt[0]);
+ my $ret = timelocal(0,0,0,$SplitDate[0],$SplitDate[1]-1,$SplitDate[2]);
+ 
+ return $ret;
+}
+#
+# Abfall Kalender auswerten / Kalender: "Kalender_Muell"
+#
+sub
+Abfalltermine ($)
+{
+my ($Ereignis) = @_;
+my @Ereignisarray = split(/.*:\s/,$Ereignis);
+my $Ereignisteil1 = $Ereignisarray[1];
+my @uids=split(/;/,$Ereignisteil1); #id des Kalendereintrags
+my $t = time;
+my $dtPapier = ''; #Datum der Leerung
+my $dtWertstoff = '';
+my $dtRest = '';
+my $dtBiotonne = '';
+my $Kalendername = 'Kalender_Muell';
+ 
+foreach my $uid (@uids) {
+	my $Kalendertext = fhem("get $Kalendername summary $uid");
+   	if ($Kalendertext =~ /Blaue Tonne/)
+   {
+	  # befüllt $eventDate mit dem Kalenderdatum aus dem zutreffenden Treffer
+      my $eventDate = KalenderDatum('$Kalendername', $uid);
+	  # Beim ersten Durchlauf ist $dtPapier immer leer
+	  # Beim zweiten Durchlauf nicht, daher muss $eventDate in der Zukunft liegen und kleiner sein, als das vorherige Ergebnis
+	  # so wird die nächste Abholung ermittelt
+      if ($dtPapier eq '' || ($eventDate < $dtPapier && $eventDate > $t))
+      {
+		 # setze $dtPapier mit erstem Wert aus erstem Treffer
+         $dtPapier = $eventDate;
+		 # Differenztage zwischen $dtPapier und $time
+         my $dayDiff = floor(($dtPapier - $t) / 60 / 60 / 24 + 1);
+		 # Wenn Differenz grösser gleich 0 dann setze Reading mit Tagesanzahl
+         if ($dayDiff >= 0) {
+         	fhem("setreading MuellterminDummy BlaueTonne $dayDiff");
+         	# Sollte dem Dummy den nächsten Abholtermin übergeben
+         	fhem("set Blau_dummy $dtPapier");
+         }
+      }
+   if ($Kalendertext =~ /Gelber Sack/) {
+      my $eventDate = KalenderDatum('$Kalendername', $uid);
+      if ($dtWertstoff eq '' || ($eventDate < $dtWertstoff && $eventDate > $t))
+      {
+         $dtWertstoff = $eventDate;
+   
+         my $dayDiff = floor(($dtWertstoff - $t) / 60 / 60 / 24 + 1);
+         if ($dayDiff >= 0) { 
+         	fhem("setreading MuellterminDummy GelbeTonne $dayDiff");
+         	fhem("set Gelb_dummy $dtWertstoff");
+         }
+      }
+   };
+   if ($Kalendertext =~ /Restmüll/) {
+      my $eventDate = KalenderDatum('$Kalendername', $uid);
+      if ($dtRest eq '' || ($eventDate < $dtRest && $eventDate > $t))
+      {
+          $dtRest = $eventDate;
+ 
+          my $dayDiff = floor(($dtRest - $t) / 60 / 60 / 24 + 1);
+          if ($dayDiff >= 0) { 
+          	fhem("setreading MuellterminDummy Restmuell $dayDiff"); 
+          	fhem("set Restmuell_dummy $dtRest");
+          }
+      }
+   };
+   if ($Kalendertext =~ /Grünabfall/) {
+      my $eventDate = KalenderDatum('$Kalendername', $uid);
+      if ($dtBiotonne eq '' || ($eventDate < $dtBiotonne && $eventDate > $t))
+      {
+         $dtBiotonne = $eventDate;
+         
+         my $dayDiff = floor(($dtBiotonne - $t) / 60 / 60 / 24 + 1);
+         if ($dayDiff >= 0) { 
+         	fhem("setreading MuellterminDummy BioTonne $dayDiff");
+         	fhem("set Gruen_dummy $dtBiotonne");
+         	}
+      };
+   };
+}
+}
+######################################################
+# Müllkalender
+# http://www.blog-gedanken.de/smarthome-2/smarthome-mit-fhem-umsetzung-meines-abfallkalenders/
 ######################################################
 
 ######################################################
