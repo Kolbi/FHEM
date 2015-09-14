@@ -192,6 +192,8 @@ Kalenderende ($)
 #
 # Hilfsfunktion für Kalenderauswertungen
 #
+use Time::Local;
+
 sub
 KalenderDatum($$)
 {
