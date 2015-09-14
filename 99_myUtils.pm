@@ -283,6 +283,7 @@ foreach my $uid (@uids) {
    };
 }
 }
+}
 ######################################################
 # Müllkalender
 # http://www.blog-gedanken.de/smarthome-2/smarthome-mit-fhem-umsetzung-meines-abfallkalenders/
