@@ -241,7 +241,8 @@ foreach my $uid (@uids) {
          if ($dayDiff >= 0) {
          	fhem("setreading MuellterminDummy BlaueTonne $dayDiff");
          	# Sollte dem Dummy den nächsten Abholtermin übergeben
-         	fhem("set Blau_dummy $dtPapier");
+         	my $Epochen =  Epochen_aus_Datum($dtPapier);
+         	fhem("set Blau_dummy $Epochen");
          }
       }
    };
@@ -254,7 +255,8 @@ foreach my $uid (@uids) {
          my $dayDiff = floor(($dtWertstoff - $t) / 60 / 60 / 24 + 1);
          if ($dayDiff >= 0) { 
          	fhem("setreading MuellterminDummy GelbeTonne $dayDiff");
-         	fhem("set Gelb_dummy $dtWertstoff");
+         	my $Epochen =  Epochen_aus_Datum($dtWertstoff);
+         	fhem("set Gelb_dummy $Epochen");
          }
       }
    };
@@ -267,7 +269,8 @@ foreach my $uid (@uids) {
           my $dayDiff = floor(($dtRest - $t) / 60 / 60 / 24 + 1);
           if ($dayDiff >= 0) { 
           	fhem("setreading MuellterminDummy Restmuell $dayDiff"); 
-          	fhem("set Restmuell_dummy $dtRest");
+          	my $Epochen =  Epochen_aus_Datum($dtRest);
+         	fhem("set Restmuell_dummy $Epochen");
           }
       }
    };
@@ -280,11 +283,24 @@ foreach my $uid (@uids) {
          my $dayDiff = floor(($dtBiotonne - $t) / 60 / 60 / 24 + 1);
          if ($dayDiff >= 0) { 
          	fhem("setreading MuellterminDummy BioTonne $dayDiff");
-         	fhem("set Gruen_dummy $dtBiotonne");
+         	my $Epochen =  Epochen_aus_Datum($dtBiotonne);
+         	fhem("set Gruen_dummy $Epochen");
          	}
       };
    };
 }
+}
+
+#http://www.epochconverter.com/programming/functions-perl.php
+sub 
+Epochen_aus_Datum($)
+{
+my($dtPapier) = @_;
+my @months = ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+my ($sec, $min, $hour, $day,$month,$year) = (localtime($dtPapier))[0,1,2,3,4,5];
+my $ret = ($day.". ".($months[$month])." ".($year+1900)) ;
+#Ergebnis: 18. Sep 2015
+return $ret;
 }
 ######################################################
 # Müllkalender
