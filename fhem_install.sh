@@ -25,7 +25,7 @@ sudo apt-get install -f
 # fhem-X.Y.deb bitte mit der aktuellsten, stabilen Version ersetzen
 # http://fhem.de/fhem.html#Download
 cd /tmp
-wget  http://fhem.de/fhem-5.6.deb
+wget http://fhem.de/fhem-5.6.deb
 # Install FHEM
 sudo dpkg -i fhem-5.6.deb
 # Löschen des heruntergeladenen DEB-Paketes (optional)
