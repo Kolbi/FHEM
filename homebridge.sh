@@ -1,7 +1,7 @@
 #!/bin/bash
-# Homebridge Installation auf einem Raspberry Pi
+## Homebridge Installation auf einem Raspberry Pi
 
-# Node installieren auf dem Rapsberry Pi
+## Node installieren auf dem Rapsberry Pi
 # Solange notwendig bis Homebridge mit Node 4.0 läuft
 # sudo apt-get install node
 # http://pimatic.org/guide/getting-started/installation/
@@ -15,9 +15,9 @@ sudo tar xzvf /tmp/node-v0.10.28-linux-arm-pi.tar.gz --strip=1
 # Prüfung welche nodejs version ist installiert
 # /usr/bin/env node --version
 
-cd /home/pi
-
+## Homebridge installieren
 # https://github.com/nfarina/homebridge
+cd /home/pi
 git clone https://github.com/nfarina/homebridge.git
 cd homebridge
 # Pakete installieren
