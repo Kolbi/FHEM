@@ -22,3 +22,10 @@ git clone https://github.com/nfarina/homebridge.git
 cd homebridge
 # Pakete installieren
 npm install
+
+## Homebridge updaten
+#cd /home/pi/homebridge
+#git pull
+#npm update
+#oder 
+#npm install
