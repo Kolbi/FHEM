@@ -73,3 +73,17 @@ EOF
 ##
 sudo chmod 755 /etc/init.d/hombebridge
 sudo update-rc.d hombebridge defaults
+
+## FHEM Lösung zum Starten?
+#define ntfy_homebridge notify global:(INITIALIZED|SHUTDOWN) {
+#	if ($EVENT eq "INITIALIZED") {
+#		if(`forever list` =~ /No forever processes running/) {
+#			return `/usr/bin/forever start --spinSleepTime 1000 --minUptime 1000 --no-colors --workingDir /home/pi/homebridge -l /home/pi/homebridge/log.log -a /home/pi/homebridge/app.js`;
+#		}
+#	}
+#	elsif ($EVENT eq "SHUTDOWN") {
+#		if(`forever list` !~ /No forever processes running/) {
+#			return `/usr/bin/forever stopall --no-colors`;
+#		}
+#	}
+#}
