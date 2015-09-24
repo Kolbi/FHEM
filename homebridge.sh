@@ -32,7 +32,11 @@ npm install
 
 
 ## Homebridge Startskript
-
+# Autostart von hexenmeister
+# muss mit sudo gestartet werden ansonsten wird /etc/init.d/hmland nicht erstellt, oder sudo vor cat?
+# http://forum.fhem.de/index.php?action=post;quote=190887;topic=13071.435;last_msg=282280
+# cat << "EOF" | sudo tee -a /etc/init.d/hmland ???
+cat > /etc/init.d/homebridge <<"EOF"
 #!/bin/sh
 ### BEGIN INIT INFO
 # Provides: 		 homebridge
@@ -63,10 +67,7 @@ case "$1" in
 esac
 
 exit 0
-
-##
-
+EOF
 ##
 sudo chmod 755 /etc/init.d/hombebridge
-sudo chmod +x hombebridge
 sudo update-rc.d hombebridge defaults
