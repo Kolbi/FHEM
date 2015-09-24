@@ -30,6 +30,8 @@ npm install
 #oder 
 #npm install
 
+## Prüfen ob forever installiert ist
+npm install forever -g
 
 ## Homebridge Startskript
 # Autostart von hexenmeister
