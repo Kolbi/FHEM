@@ -53,7 +53,7 @@ export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 
 case "$1" in
   start)
-  exec forever --sourceDir=/home/pi/homebridge -p /root/.forever start app.js
+  exec forever --sourceDir=/home/pi/homebridge -p /var/log/forever start app.js
   ;;
 
   stop)
