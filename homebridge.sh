@@ -21,17 +21,17 @@ cd /home/pi
 git clone https://github.com/nfarina/homebridge.git
 cd homebridge
 # Pakete installieren
-npm install
+sudo npm install
 
 ## Homebridge updaten
 #cd /home/pi/homebridge
 #git pull
-#npm update
+#sudo npm update
 #oder 
-#npm install
+#sudo npm install
 
 ## Prüfen ob forever installiert ist
-npm install forever -g
+sudo npm install forever -g
 
 ## Homebridge Startskript
 # Autostart von hexenmeister
