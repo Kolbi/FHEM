@@ -75,6 +75,8 @@ sudo chmod 755 /etc/init.d/hombebridge
 sudo update-rc.d hombebridge defaults
 
 ## FHEM Lösung zum Starten?
+## http://forum.fhem.de/index.php?action=post;quote=318340;topic=32652.330;last_msg=336288
+
 #define ntfy_homebridge notify global:(INITIALIZED|SHUTDOWN) {
 #	if ($EVENT eq "INITIALIZED") {
 #		if(`forever list` =~ /No forever processes running/) {
