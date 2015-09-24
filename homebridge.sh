@@ -71,7 +71,7 @@ esac
 exit 0
 EOF
 ##
-sudo chmod 755 /etc/init.d/hombebridge
+sudo chmod 755 /etc/init.d/homebridge
 sudo update-rc.d hombebridge defaults
 
 ## FHEM Lösung zum Starten?
