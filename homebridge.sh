@@ -55,7 +55,7 @@ export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 
 case "$1" in
   start)
-  exec forever --sourceDir=/home/pi/homebridge -p /var/log/forever start app.js
+  exec forever --sourceDir=/home/pi/homebridge start app.js
   ;;
 
   stop)
@@ -74,18 +74,7 @@ EOF
 sudo chmod 755 /etc/init.d/homebridge
 sudo update-rc.d hombebridge defaults
 
-## FHEM Lösung zum Starten?
-## http://forum.fhem.de/index.php?action=post;quote=318340;topic=32652.330;last_msg=336288
 
-#define ntfy_homebridge notify global:(INITIALIZED|SHUTDOWN) {
-#	if ($EVENT eq "INITIALIZED") {
-#		if(`forever list` =~ /No forever processes running/) {
-#			return `/usr/bin/forever start --spinSleepTime 1000 --minUptime 1000 --no-colors --workingDir /home/pi/homebridge -l /home/pi/homebridge/log.log -a /home/pi/homebridge/app.js`;
-#		}
-#	}
-#	elsif ($EVENT eq "SHUTDOWN") {
-#		if(`forever list` !~ /No forever processes running/) {
-#			return `/usr/bin/forever stopall --no-colors`;
-#		}
-#	}
-#}
+exit 0
+
+fi
