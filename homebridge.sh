@@ -112,6 +112,9 @@ sudo chmod 755 /etc/init.d/homebridge
 #Start nur manuell derzeit
 #sudo service homebridge start
 
+# Watchdog Ideen
+#ps -ef | grep -v grep | grep /home/pi/homebridge/app.js | wc -l;
+
 exit 0
 
 fi
