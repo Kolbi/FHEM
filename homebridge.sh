@@ -38,7 +38,7 @@ sudo npm install
 sudo npm install forever -g
 
 ## Log Verzeichnis für Forever erstellen
-sudo mkdir -p /var/log/forever
+#sudo mkdir -p /var/log/forever
 
 ## Startskript funktioniert an sich, nur beim Autostart werden die PIDs nicht erkannt, folglich geht stop und status nicht
 ## Beim Manuellen Starten / Stoppen geht es... forever Bug?
@@ -83,7 +83,7 @@ export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 
 case "$1" in
   start)
-  exec forever --sourceDir=/home/pi/homebridge -p /var/log/forever start app.js
+  exec forever --sourceDir=/home/pi/homebridge start app.js
   ;;
 
   stop)
@@ -109,6 +109,8 @@ sudo chmod 755 /etc/init.d/homebridge
 ## Autostart entfernen
 #sudo update-rc.d -f hombebridge remove
 
+#Start nur manuell derzeit
+#sudo service homebridge start
 
 exit 0
 
