@@ -87,7 +87,7 @@ case "$1" in
   ;;
 
   stop)
-  exec forever stop --sourceDir=/home/pi/homebridge app.js
+  exec forever stop /home/pi/homebridge/app.js
   ;;
   
   status)
