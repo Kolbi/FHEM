@@ -67,7 +67,7 @@ case "$1" in
   ;;
   
   *)
-  echo "Usage: /etc/init.d/homebridge {start|stop}"
+  echo "Usage: /etc/init.d/homebridge {start|stop|status}"
   exit 1
   ;;
 esac
