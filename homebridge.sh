@@ -62,6 +62,10 @@ case "$1" in
   exec forever stop --sourceDir=/home/pi/homebridge app.js
   ;;
   
+  status)
+  exec forever list
+  ;;
+  
   *)
   echo "Usage: /etc/init.d/homebridge {start|stop}"
   exit 1
