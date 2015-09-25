@@ -105,9 +105,9 @@ EOF
 ##
 sudo chmod 755 /etc/init.d/homebridge
 ## Autostart hinzufügen
-#sudo update-rc.d hombebridge defaults
+#sudo update-rc.d hobebridge defaults
 ## Autostart entfernen
-#sudo update-rc.d -f hombebridge remove
+#sudo update-rc.d -f homebridge remove
 
 #Start nur manuell derzeit
 #sudo service homebridge start
