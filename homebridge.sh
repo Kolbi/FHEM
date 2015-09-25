@@ -44,7 +44,16 @@ sudo mkdir -p /var/log/forever
 ## Beim Manuellen Starten / Stoppen geht es... forever Bug?
 ## Autostart (Root)         => pid /root/.forever/  => sudo kann nicht zugreifen drauf
 ## Manueller Start mit sudo => pid /root/.forever/  => sudo Zugriff okay
-## -p /var/log/forever PID wird angelegt forever list erkennt es nicht, da pidPath falsch ist
+## Mit -p /var/log/forever  => pid /var/log/forber  => forever list erkennt es nicht, da pidPath falsch ist
+
+## Workaround
+# sudo crontab -e
+#@reboot /usr/local/bin/forever --sourceDir=/home/pi/homebridge -p /var/log/forever start app.js
+#@reboot service homebridge start
+#@reboot /usr/local/bin/forever start -c /usr/local/bin/node -p /var/log/forever /home/pi/homebridge/app.js
+
+## sudo su - root
+## sudo service homebridge status / stop geht
 
 ## PID Pfad setzen für normalen User
 ## geht nicht, setzt das File immer wieder auf default
@@ -95,7 +104,10 @@ exit 0
 EOF
 ##
 sudo chmod 755 /etc/init.d/homebridge
-sudo update-rc.d hombebridge defaults
+## Autostart hinzufügen
+#sudo update-rc.d hombebridge defaults
+## Autostart entfernen
+#sudo update-rc.d -f hombebridge remove
 
 
 exit 0
