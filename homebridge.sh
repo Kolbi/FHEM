@@ -1,6 +1,10 @@
 #!/bin/bash
 ## Homebridge Installation auf einem Raspberry Pi
 
+sudo apt-get update
+# Subpackage needed to compile node-gyp (See: https://github.com/KhaosT/HAP-NodeJS/issues/77)
+sudo apt-get install -y libavahi-compat-libdnssd-dev
+
 ## Node installieren auf dem Rapsberry Pi
 # Solange notwendig bis Homebridge mit Node 4.0 läuft
 # sudo apt-get install node
@@ -30,8 +34,23 @@ sudo npm install
 #oder 
 #sudo npm install
 
-## Prüfen ob forever installiert ist
+## Forever installieren
 sudo npm install forever -g
+
+## Log Verzeichnis für Forever erstellen
+sudo mkdir -p /var/log/forever
+
+## Startskript funktioniert an sich, nur beim Autostart werden die PIDs nicht erkannt, folglich geht stop und status nicht
+## Beim Manuellen Starten / Stoppen geht es... forever Bug?
+## Autostart (Root)         => pid /root/.forever/  => sudo kann nicht zugreifen drauf
+## Manueller Start mit sudo => pid /root/.forever/  => sudo Zugriff okay
+## -p /var/log/forever PID wird angelegt forever list erkennt es nicht, da pidPath falsch ist
+
+## PID Pfad setzen für normalen User
+## geht nicht, setzt das File immer wieder auf default
+##forever set pidPath /var/log/forever
+## PID Pfad setzen für Root
+##sudo forever set pidPath /var/log/forever
 
 ## Homebridge Startskript
 # Autostart von hexenmeister
@@ -55,7 +74,7 @@ export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 
 case "$1" in
   start)
-  exec forever --sourceDir=/home/pi/homebridge start app.js
+  exec forever --sourceDir=/home/pi/homebridge -p /var/log/forever start app.js
   ;;
 
   stop)
