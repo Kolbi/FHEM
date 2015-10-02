@@ -25,6 +25,11 @@ cd /home/pi
 git clone https://github.com/nfarina/homebridge.git
 cd homebridge
 # Pakete installieren
+
+#Gegebenfalls unnötige Pakete entfernen
+#https://github.com/cflurin/homebridge-shims/wiki/Minimalist-Homebridge-on-a-Raspberry-Pi
+#sudo nano package.json
+#Gegebenfalls unnötige Pakete entfernen
 sudo npm install
 
 ## Homebridge updaten
