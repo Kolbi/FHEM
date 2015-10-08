@@ -17,7 +17,8 @@ sudo make
 # Stop hmland
 sudo service hmland stop
 
-wait 5
+# Wait geht auf Raspberry eventuell nicht
+sudo wait 5
 
 #Start hmland
 sudo service hmland start
