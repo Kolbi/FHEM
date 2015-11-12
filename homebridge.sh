@@ -5,36 +5,35 @@ sudo apt-get update
 # Subpackage needed to compile node-gyp (See: https://github.com/KhaosT/HAP-NodeJS/issues/77)
 sudo apt-get install -y libavahi-compat-libdnssd-dev
 
+## GCC installieren
+# https://github.com/cflurin/homebridge-shims/wiki/Minimalist-Homebridge-on-a-Raspberry-Pi
+sudo apt-get install gcc-4.8 g++-4.8
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 20
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.6 20
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+
+# GCC Version prüfen
+# gcc --version
+
 ## Node installieren auf dem Rapsberry Pi
-# Solange notwendig bis Homebridge mit Node 4.0 läuft
-# sudo apt-get install node
-# http://pimatic.org/guide/getting-started/installation/
-# Node herunterladen
-wget http://nodejs.org/dist/v0.10.28/node-v0.10.28-linux-arm-pi.tar.gz -P /tmp
-# Ins Verzeichnis springen
-cd /usr/local
-# Node installieren
-sudo tar xzvf /tmp/node-v0.10.28-linux-arm-pi.tar.gz --strip=1
+sudo apt-get install node
 
 # Prüfung welche nodejs version ist installiert
 # /usr/bin/env node --version
 
 ## Homebridge installieren
 # https://github.com/nfarina/homebridge
-cd /home/pi
-git clone https://github.com/nfarina/homebridge.git
-cd homebridge
-# Pakete installieren
+sudo npm install -g homebridge
+# FHEM Plugin installieren
+sudo npm install -g homebridge-fhem
 
 #Gegebenfalls unnötige Pakete entfernen
 #https://github.com/cflurin/homebridge-shims/wiki/Minimalist-Homebridge-on-a-Raspberry-Pi
 #sudo nano package.json
-#Gegebenfalls unnötige Pakete entfernen
-sudo npm install
 
 ## Homebridge updaten
-#cd /home/pi/homebridge
-#git pull
 #sudo npm update
 #oder 
 #sudo npm install
