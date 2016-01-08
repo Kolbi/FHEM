@@ -1,0 +1,22 @@
+# http://www.admin-magazin.de/Das-Heft/2014/10/Systemstart-mit-Systemd-unter-Linux/(offset)/
+# http://heinz-otto.blogspot.ch/2015/11/fhem-und-jessie.html
+# http://manpages.debian.org/cgi-bin/man.cgi?query=systemd.service&sektion=5&apropos=0&manpath=Debian+8+jessie&locale=
+# http://manpages.debian.org/cgi-bin/man.cgi?query=systemd.unit&sektion=5&apropos=0&manpath=Debian+8+jessie&locale=
+
+sudo nano /etc/systemd/system/hmland.service
+
+[Unit]
+Description=Hmland
+After=syslog.target network.target
+[Service]
+ExecStart=/opt/hmcfgusb/hmland -r 0 -d -P -l 127.0.0.1 -p 1234 2>&1 | perl -ne '$|=1; print localtime . ": [hmland] $_"' >> /var/log/hmland.log &
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+
+sudo chmod 755 /etc/systemd/system/hmland.service
+
+#systemctl
+systemctl enable hmland.service
+#systemctl disable hmland.service
+systemctl start hmland.service
