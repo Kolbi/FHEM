@@ -10,6 +10,12 @@ use strict;
 use warnings;
 use POSIX;
 
+sub
+myUtils_Initialize($$)
+{
+  my ($hash) = @_;
+}
+
 ######################################################
 # SetTempList_Heizung($$$$$$$$)
 ######################################################
