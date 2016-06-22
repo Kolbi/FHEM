@@ -27,7 +27,7 @@ sudo apt-get install node
 # https://github.com/nfarina/homebridge
 sudo npm install -g homebridge
 # FHEM Plugin installieren
-sudo npm install -g git+https://github.com/justme-1968/homebridge-fhem.git
+sudo npm install -g homebridge-fhem
 
 #Gegebenfalls unnötige Pakete entfernen
 #https://github.com/cflurin/homebridge-shims/wiki/Minimalist-Homebridge-on-a-Raspberry-Pi
