@@ -46,9 +46,12 @@ DebianMail($$$$)
   <b>Name</b>
   <br>
   Text<br>
+  DebianMail  Mail auf dem RPi versenden http://www.fhemwiki.de/wiki/E-Mail_senden
   Examples:
   <ul>
-   <code>Example Code </code><br>
+   <code>define Sonstiges at *01:00:00 {\
+DebianMail('email@email.domain','Subject','Text','Anhang');;\
+}</code>
   </ul>
 </ul>
  
@@ -57,11 +60,18 @@ DebianMail($$$$)
  
 <a name="DebianMail"></a>
 <h3>DebianMail</h3>
-DebianMail  Mail auf dem RPi versenden
-http://www.fhemwiki.de/wiki/E-Mail_senden
-<code>define Sonstiges at *01:00:00 {\
+<ul>
+  <b>Name</b>
+  <br>
+  Text<br>
+  DebianMail  Mail auf dem RPi versenden http://www.fhemwiki.de/wiki/E-Mail_senden
+  Examples:
+  <ul>
+   <code>define Sonstiges at *01:00:00 {\
 DebianMail('email@email.domain','Subject','Text','Anhang');;\
 }</code>
-######################################################
+  </ul>
+</ul>
+
 =end html_DE
 =cut
