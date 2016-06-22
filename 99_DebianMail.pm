@@ -16,20 +16,10 @@ DebianMail_Initialize($$)
   my ($hash) = @_;
 }
 
-######################################################
-# DebianMail  Mail auf dem RPi versenden
-# http://www.fhemwiki.de/wiki/E-Mail_senden
-# define Sonstiges at *01:00:00 {\
-# DebianMail('email@email.domain','Subject','Text','Anhang');;\
-# }
-######################################################
 sub 
-DebianMail 
+DebianMail($$$$)
 { 
- my $rcpt = shift;
- my $subject = shift; 
- my $text = shift;
- my $attach = shift; 
+ my ($rcpt, $subject, $text, $attach) = @_;
  my $ret = "";
  my $sender = "absender\@account.de"; 
  my $konto = "kontoname\@account.de";
@@ -44,9 +34,6 @@ DebianMail
  $ret =~ s,[\r\n]*,,g;    # remove CR from return-string 
  Log 1, "sendEmail returned: $ret"; 
 }
-######################################################
-# DebianMail  Mail auf dem RPi versenden
-######################################################
 
 1;
 
@@ -70,6 +57,11 @@ DebianMail
  
 <a name="DebianMail"></a>
 <h3>DebianMail</h3>
- 
+DebianMail  Mail auf dem RPi versenden
+http://www.fhemwiki.de/wiki/E-Mail_senden
+<code>define Sonstiges at *01:00:00 {\
+DebianMail('email@email.domain','Subject','Text','Anhang');;\
+}</code>
+######################################################
 =end html_DE
 =cut
