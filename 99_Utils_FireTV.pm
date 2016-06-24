@@ -171,3 +171,96 @@ sub ftv_apps(;$) {
 }
 
 1;
+
+=pod
+=begin html
+ 
+<a name="Utils_FireTV"></a>
+<h3>Utils_FireTV</h3>
+<ul>
+  <b>Name</b>
+  <br>
+  Text<br>
+  Examples:
+  <ul>
+   <code> <li data-row="1" data-col="2" data-sizex="2" data-sizey="4">
+        <header>FIRE TV</header>
+        <div class="centered container">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_up('192.168.178.41')}" data-icon="fa-angle-up" data-on-background-color="#2E8AE6" class="cell"></div>
+        </div>
+        <div class="centered container">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_left('192.168.178.41')}" data-icon="fa-angle-left" data-on-background-color="#2E8AE6" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_enter('192.168.178.41')}" data-icon="fa-check-circle" data-on-background-color="#0066FF" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_right('192.168.178.41')}" data-icon="fa-angle-right" data-on-background-color="#2E8AE6" class="cell"></div>
+        </div>
+        <div class="centered container">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_down('192.168.178.41')}" data-icon="fa-angle-down" data-on-background-color="#2E8AE6" class="cell"></div>
+        </div>
+        
+        <div class="centered container" style="margin-top:30px">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_back('192.168.178.41')}" data-icon="fa-arrow-circle-o-left" data-on-background-color="#aa6900" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_home('192.168.178.41')}" data-icon="fa-home" data-on-background-color="#9933FF" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_menu('192.168.178.41')}" data-icon="fa-bars" data-on-background-color="#aa6900" class="cell"></div>
+        </div>
+        
+        <div class="centered container">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_prev('192.168.178.41')}" data-icon="fa-backward" data-on-background-color="#aa6900" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_playpause('192.168.178.41')}" data-icon="fa-play" data-on-background-color="#FFCC00" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_next('192.168.178.41')}" data-icon="fa-forward" data-on-background-color="#aa6900" class="cell"></div>
+        </div>
+        
+        <div class="centered container" style="margin-top:30px">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_search('Terminator 1', '192.168.178.41')}" data-icon="fa-search" data-on-background-color="#808080" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_apps('192.168.178.41')}" data-icon="fa-tasks" data-on-background-color="#808080" class="cell"></div>
+        </div></code>
+    </li>
+  </ul>
+</ul>
+ 
+=end html
+=begin html_DE
+ 
+<a name="Utils_FireTV"></a>
+<h3>Utils_FireTV</h3>
+<ul>
+  <b>Name</b>
+  <br>
+  Text<br>
+  Examples:
+  <ul>
+   <code> <li data-row="1" data-col="2" data-sizex="2" data-sizey="4">
+        <header>FIRE TV</header>
+        <div class="centered container">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_up('192.168.178.41')}" data-icon="fa-angle-up" data-on-background-color="#2E8AE6" class="cell"></div>
+        </div>
+        <div class="centered container">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_left('192.168.178.41')}" data-icon="fa-angle-left" data-on-background-color="#2E8AE6" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_enter('192.168.178.41')}" data-icon="fa-check-circle" data-on-background-color="#0066FF" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_right('192.168.178.41')}" data-icon="fa-angle-right" data-on-background-color="#2E8AE6" class="cell"></div>
+        </div>
+        <div class="centered container">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_down('192.168.178.41')}" data-icon="fa-angle-down" data-on-background-color="#2E8AE6" class="cell"></div>
+        </div>
+        
+        <div class="centered container" style="margin-top:30px">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_back('192.168.178.41')}" data-icon="fa-arrow-circle-o-left" data-on-background-color="#aa6900" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_home('192.168.178.41')}" data-icon="fa-home" data-on-background-color="#9933FF" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_menu('192.168.178.41')}" data-icon="fa-bars" data-on-background-color="#aa6900" class="cell"></div>
+        </div>
+        
+        <div class="centered container">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_prev('192.168.178.41')}" data-icon="fa-backward" data-on-background-color="#aa6900" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_playpause('192.168.178.41')}" data-icon="fa-play" data-on-background-color="#FFCC00" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_next('192.168.178.41')}" data-icon="fa-forward" data-on-background-color="#aa6900" class="cell"></div>
+        </div>
+        
+        <div class="centered container" style="margin-top:30px">
+            <div id="" data-type="button" data-fhem-cmd="{ftv_search('Terminator 1', '192.168.178.41')}" data-icon="fa-search" data-on-background-color="#808080" class="cell"></div>
+            <div id="" data-type="button" data-fhem-cmd="{ftv_apps('192.168.178.41')}" data-icon="fa-tasks" data-on-background-color="#808080" class="cell"></div>
+        </div></code>
+    </li>
+  </ul>
+</ul>
+
+=end html_DE
+=cut
