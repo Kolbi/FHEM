@@ -1,5 +1,5 @@
 # Quelle: https://forum.fhem.de/index.php/topic,28770.msg335420.html#msg335420
-# Author: nesges
+# Author: nesges (https://github.com/nesges)
 
 # 1.) activate adb debugging in your fire tv
 # 2.) get adb for Raspberry from http://forum.xda-developers.com/attachment.php?attachmentid=1392336&d=1349930509
