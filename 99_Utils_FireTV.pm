@@ -1,3 +1,5 @@
+#ToDo: 15.02.2017: Erweiterung siehe: https://forum.fhem.de/index.php/topic,28770.msg585657.html#msg585657
+#
 # Quelle: https://forum.fhem.de/index.php/topic,28770.msg335420.html#msg335420
 # Author: nesges (https://github.com/nesges)
 
