@@ -11,7 +11,7 @@ use warnings;
 use POSIX;
 
 sub
-DebianMail_Initialize($$)
+DebianMailUtils_Initialize($$)
 {
   my ($hash) = @_;
 }
