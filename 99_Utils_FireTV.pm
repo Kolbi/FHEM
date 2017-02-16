@@ -1,13 +1,29 @@
-#ToDo: 15.02.2017: Erweiterung siehe: https://forum.fhem.de/index.php/topic,28770.msg585657.html#msg585657
+#ToDo: 
+#       15.02.2017: Erweiterung siehe: https://forum.fhem.de/index.php/topic,28770.msg585657.html#msg585657
+#       16.02.2017: https://forum.fhem.de/index.php/topic,28770.msg585657.html#msg585657 
+#                   Prüfen auf Programme:
+#                   adb shell pm list packages -f -3
+#                   Sleeptimer als AT in 1,5h:
+#                   define FTVSLEEP at +01:30:00 {ftv_wakeup('192.168.178.41') && ftv_power('192.168.178.41')}
 #
 # Quelle: https://forum.fhem.de/index.php/topic,28770.msg335420.html#msg335420
 # Author: nesges (https://github.com/nesges)
+
+sub ftv_wakeup(;$) {
+    # wakeup from daydream
+    ftv_key("KEYCODE_WAKEUP", shift);
+}
+sub ftv_power(;$) {
+    # press power button -> go to sleep or wakeup
+    ftv_key("KEYCODE_POWER", shift);
+}
 
 # 1.) activate adb debugging in your fire tv
 # 2.) get adb for Raspberry from http://forum.xda-developers.com/attachment.php?attachmentid=1392336&d=1349930509
 # 3.) copy the binary to /usr/bin/
 # 
 # general keycodes: http://developer.android.com/reference/android/view/KeyEvent.html
+
 
 package main;
 use strict;
@@ -65,6 +81,8 @@ sub ftv_adb($;$) {
     # save $host in adb:host
     fhem("setreading adb host $host");
 }
+
+
 
 # send a single keyevent using adb
 sub ftv_key($;$) {
@@ -171,6 +189,8 @@ sub ftv_apps(;$) {
     ftv_down();
     ftv_enter();
 }
+
+
 
 1;
 
