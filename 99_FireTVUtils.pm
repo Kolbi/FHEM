@@ -32,7 +32,7 @@ use Switch;
 # use Time::HiRes;
 use Date::Parse;
 
-sub Utils_FireTV_Initialize($$) {
+sub FireTVUtils_Initialize($$) {
     my ($hash) = @_;
 }
 
